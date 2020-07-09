@@ -19,6 +19,8 @@ for (let i = 0; i < squares.length; i++){
 
     // add click listeners to squares
     squares[i].addEventListener('click', e => {
-        alert('clicked a square');
+        // grab color of clicked square
+        let clickedColor = e.target.style.backgroundColor;
+        // compare color to pickedColor
     });
 };
