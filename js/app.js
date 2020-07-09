@@ -23,7 +23,7 @@ for (let i = 0; i < squares.length; i++){
         let clickedColor = e.target.style.backgroundColor;
         // compare color to pickedColor
         if (clickedColor !== pickedColor){
-            alert('wrong choices');
+            e.target.style.backgroundColor = "#232323";
         } else {
             alert('correct!');
         };
