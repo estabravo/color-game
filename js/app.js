@@ -8,6 +8,7 @@ let colors = [
 ]
 
 const squares = document.querySelectorAll(".square");
+let pickedColor = colors[3];
 
 for (let i = 0; i < squares.length; i++){
     squares[i].style.backgroundColor = colors[i];
