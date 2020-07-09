@@ -2,7 +2,7 @@ let colors = [
     "rgb(255, 0, 0)",
     "rgb(255, 255, 0)",
     "rgb(0, 255, 0)",
-    "rgb(, 255, 255)",
+    "rgb(0, 255, 255)",
     "rgb(0, 0, 255)",
     "rgb(255, 0, 255)"
 ]
@@ -22,5 +22,10 @@ for (let i = 0; i < squares.length; i++){
         // grab color of clicked square
         let clickedColor = e.target.style.backgroundColor;
         // compare color to pickedColor
+        if (clickedColor !== pickedColor){
+            alert('wrong choices');
+        } else {
+            alert('correct!');
+        };
     });
 };
