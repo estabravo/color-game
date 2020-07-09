@@ -24,9 +24,10 @@ for (let i = 0; i < squares.length; i++){
         let clickedColor = e.target.style.backgroundColor;
         // compare color to pickedColor
         if (clickedColor !== pickedColor){
-            e.target.style.backgroundColor = "#232323";
+            e.target.style.backgroundColor = '#232323';
+            messageDisplay.textContent = 'Guess again!'
         } else {
-            alert('correct!');
+            messageDisplay.textContent = "Wow, you're great!!"
         };
     });
 };
