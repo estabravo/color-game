@@ -1,7 +1,7 @@
 const squares = document.querySelectorAll(".square");
 const colorDisplay = document.getElementById('colorDisplay');
 const messageDisplay = document.getElementById('message');
-let pickedColor = colors[3];
+
 
 let colors = [
     "rgb(255, 0, 0)",
@@ -11,6 +11,8 @@ let colors = [
     "rgb(0, 0, 255)",
     "rgb(255, 0, 255)"
 ]
+
+let pickedColor = colors[3];
 
 colorDisplay.textContent = pickedColor; 
 
