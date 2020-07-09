@@ -7,3 +7,5 @@ let colors = [
     "rgb(255, 0, 255)"
 ]
 
+const squares = document.querySelectorAll(.square);
+
