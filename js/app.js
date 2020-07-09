@@ -30,6 +30,15 @@ for (let i = 0; i < squares.length; i++){
             messageDisplay.textContent = 'Guess again!'
         } else {
             messageDisplay.textContent = "Wow, you're great!!"
+            changedColors();
         };
     });
 };
+
+const changedColors = color => {
+    // loop through all squares 
+    squares.forEach(color => {
+        color.style.backgroundColor = pickedColor;
+    })
+    // change each color to match given color
+}
