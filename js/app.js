@@ -12,7 +12,7 @@ let colors = [
     "rgb(255, 0, 255)"
 ]
 
-let pickedColor = colors[3];
+let pickedColor = colors[Math.floor(Math.random() * colors.length)];
 
 colorDisplay.textContent = pickedColor; 
 
