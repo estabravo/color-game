@@ -4,17 +4,16 @@ const messageDisplay = document.getElementById('message');
 
 const rColor = () => {
     return Math.floor(Math.random() * 256).toString();
-    
 } 
 
 let colors = [
-    "rgb(255, 0, 0)",
-    "rgb(255, 255, 0)",
-    "rgb(0, 255, 0)",
-    "rgb(0, 255, 255)",
-    "rgb(0, 0, 255)",
-    "rgb(255, 0, 255)"
-]
+    `rgb(${rColor()}, ${rColor()}, ${rColor()})`,
+    `rgb(${rColor()}, ${rColor()}, ${rColor()})`,
+    `rgb(${rColor()}, ${rColor()}, ${rColor()})`,
+    `rgb(${rColor()}, ${rColor()}, ${rColor()})`,
+    `rgb(${rColor()}, ${rColor()}, ${rColor()})`,
+    `rgb(${rColor()}, ${rColor()}, ${rColor()})`
+];
 
 let pickedColor = colors[Math.floor(Math.random() * colors.length)];
 
