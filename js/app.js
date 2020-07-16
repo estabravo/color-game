@@ -2,6 +2,10 @@ const squares = document.querySelectorAll(".square");
 const colorDisplay = document.getElementById('colorDisplay');
 const messageDisplay = document.getElementById('message');
 
+const rColor = () => {
+    return Math.floor(Math.random() * 256).toString();
+    
+} 
 
 let colors = [
     "rgb(255, 0, 0)",
