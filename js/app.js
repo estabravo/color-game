@@ -2,9 +2,15 @@ const squares = document.querySelectorAll(".square");
 const colorDisplay = document.getElementById('colorDisplay');
 const messageDisplay = document.getElementById('message');
 
+
 const rColor = () => {
-    return Math.floor(Math.random() * 256).toString();
-} 
+    let r = Math.floor(Math.random() * 256).toString();
+    let g = Math.floor(Math.random() * 256).toString();
+    let b = Math.floor(Math.random() * 256).toString();
+
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
 
 let colors = [
     `rgb(${rColor()}, ${rColor()}, ${rColor()})`,
@@ -43,5 +49,5 @@ const changedColors = color => {
     squares.forEach(color => {
         color.style.backgroundColor = pickedColor;
     })
-    // change each color to match given color
 }
+
