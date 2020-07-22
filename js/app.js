@@ -2,6 +2,11 @@ const squares = document.querySelectorAll(".square");
 const colorDisplay = document.getElementById('colorDisplay');
 const messageDisplay = document.getElementById('message');
 const h1 = document.querySelector('h1');
+const resetButton = document.getElementById('reset');
+
+resetButton.addEventListener('click', () => {
+    alert('Clicked');
+});
 
 
 const generateRandomColors = num => {
