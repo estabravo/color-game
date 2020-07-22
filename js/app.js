@@ -3,6 +3,17 @@ const colorDisplay = document.getElementById('colorDisplay');
 const messageDisplay = document.getElementById('message');
 
 
+const generateRandomColors = num => {
+    // make array
+    let arr = []
+    // add num random colors to arr
+    for(var i = 0; i < num; i++){
+        arr.push(rColor())
+    }
+    // return array 
+    return arr;
+};
+
 const rColor = () => {
     let r = Math.floor(Math.random() * 256).toString();
     let g = Math.floor(Math.random() * 256).toString();
@@ -11,15 +22,7 @@ const rColor = () => {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-
-let colors = [
-    `rgb(${rColor()}, ${rColor()}, ${rColor()})`,
-    `rgb(${rColor()}, ${rColor()}, ${rColor()})`,
-    `rgb(${rColor()}, ${rColor()}, ${rColor()})`,
-    `rgb(${rColor()}, ${rColor()}, ${rColor()})`,
-    `rgb(${rColor()}, ${rColor()}, ${rColor()})`,
-    `rgb(${rColor()}, ${rColor()}, ${rColor()})`
-];
+let colors = generateRandomColors(6);
 
 let pickedColor = colors[Math.floor(Math.random() * colors.length)];
 
