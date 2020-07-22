@@ -6,8 +6,13 @@ const resetButton = document.getElementById('reset');
 const easyBtn = document.getElementById('easyBtn');
 const hardBtn = document.getElementById('hardBtn');
 
+easyBtn.addEventListener('click', () => {
+    alert('you clicked me!');
+});
 
-
+hardBtn.addEventListener('click', () => {
+    alert('you clicked me too!');
+});
 
 const generateRandomColors = num => {
     // make array
