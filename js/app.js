@@ -6,12 +6,16 @@ const resetButton = document.getElementById('reset');
 const easyBtn = document.getElementById('easyBtn');
 const hardBtn = document.getElementById('hardBtn');
 
+
 easyBtn.addEventListener('click', () => {
-    alert('you clicked me!');
+   easyBtn.classList.add('selected');
+   hardBtn.classList.remove('selected');
+
 });
 
 hardBtn.addEventListener('click', () => {
-    alert('you clicked me too!');
+    hardBtn.classList.add('selected');
+    easyBtn.classList.remove('selected');
 });
 
 const generateRandomColors = num => {
