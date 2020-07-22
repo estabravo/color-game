@@ -4,9 +4,7 @@ const messageDisplay = document.getElementById('message');
 const h1 = document.querySelector('h1');
 const resetButton = document.getElementById('reset');
 
-resetButton.addEventListener('click', () => {
-    alert('Clicked');
-});
+
 
 
 const generateRandomColors = num => {
@@ -59,5 +57,17 @@ const changedColors = color => {
     squares.forEach(color => {
         color.style.backgroundColor = pickedColor;
     })
-}
+};
 
+resetButton.addEventListener('click', () => {
+    //generate all new colors
+    colors = generateRandomColors(6);
+    // pick a new random color from array
+    pickedColor = colors[Math.floor(Math.random() * colors.length)];
+    colorDisplay.textContent = pickedColor;
+    // change colors of squares
+    for (let i = 0; i < squares.length; i++){
+        // add initial colors to squares
+        squares[i].style.backgroundColor = colors[i];
+    };
+});
