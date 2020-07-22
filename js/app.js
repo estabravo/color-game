@@ -1,6 +1,7 @@
 const squares = document.querySelectorAll(".square");
 const colorDisplay = document.getElementById('colorDisplay');
 const messageDisplay = document.getElementById('message');
+const h1 = document.querySelector('h1');
 
 
 const generateRandomColors = num => {
@@ -43,6 +44,7 @@ for (let i = 0; i < squares.length; i++){
         } else {
             messageDisplay.textContent = "Wow, you're great!!"
             changedColors();
+            h1.style.background = clickedColor;
         };
     });
 };
