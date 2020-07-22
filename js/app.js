@@ -3,7 +3,8 @@ const colorDisplay = document.getElementById('colorDisplay');
 const messageDisplay = document.getElementById('message');
 const h1 = document.querySelector('h1');
 const resetButton = document.getElementById('reset');
-
+const easyBtn = document.querySelector('easyBtn');
+const hardBtn = document.querySelector('hardBtn');
 
 
 
