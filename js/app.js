@@ -48,6 +48,7 @@ for (let i = 0; i < squares.length; i++){
             messageDisplay.textContent = "Wow, you're great!!"
             changedColors();
             h1.style.background = clickedColor;
+            resetButton.textContent = "Play Again?";
         };
     });
 };
@@ -70,4 +71,5 @@ resetButton.addEventListener('click', () => {
         // add initial colors to squares
         squares[i].style.backgroundColor = colors[i];
     };
+    resetButton.textContent = "New Colors";
 });
