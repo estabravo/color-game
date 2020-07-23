@@ -5,18 +5,8 @@ const h1 = document.querySelector('h1');
 const resetButton = document.getElementById('reset');
 const easyBtn = document.getElementById('easyBtn');
 const hardBtn = document.getElementById('hardBtn');
-
-
-easyBtn.addEventListener('click', () => {
-   easyBtn.classList.add('selected');
-   hardBtn.classList.remove('selected');
-
-});
-
-hardBtn.addEventListener('click', () => {
-    hardBtn.classList.add('selected');
-    easyBtn.classList.remove('selected');
-});
+const grid = document.getElementById('container');
+let nums = 6;
 
 const generateRandomColors = num => {
     // make array
@@ -37,7 +27,7 @@ const rColor = () => {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-let colors = generateRandomColors(6);
+let colors = generateRandomColors(nums);
 
 let pickedColor = colors[Math.floor(Math.random() * colors.length)];
 
@@ -71,17 +61,47 @@ const changedColors = color => {
     })
 };
 
-resetButton.addEventListener('click', () => {
-    //generate all new colors
-    colors = generateRandomColors(6);
+const reset = num => {
+    colors = generateRandomColors(num);
     // pick a new random color from array
     pickedColor = colors[Math.floor(Math.random() * colors.length)];
     colorDisplay.textContent = pickedColor;
     // change colors of squares
     for (let i = 0; i < squares.length; i++){
-        // add initial colors to squares
-        squares[i].style.backgroundColor = colors[i];
+        squares[i].style.background = colors[i];
+        if(!colors[i]){
+            squares[i].style.display = 'none'; 
+        } else {
+            squares[i].style.display = 'block';
+        };
     };
     resetButton.textContent = "New Colors";
     h1.style.background = "#232323";
+};
+
+
+easyBtn.addEventListener('click', () => {
+    easyBtn.classList.add('selected');
+    hardBtn.classList.remove('selected');
+    
+    let nums = 3;
+    reset(nums);
+ });
+ 
+ hardBtn.addEventListener('click', () => {
+     hardBtn.classList.add('selected');
+     easyBtn.classList.remove('selected');
+
+     let nums = 6
+     reset(nums);
+ });
+
+
+resetButton.addEventListener('click', () => {
+    if (hardBtn.classList.contains('selected')){
+        nums = 6;
+    } else {
+        nums = 3;
+    }
+    reset(nums);
 });
