@@ -10,6 +10,7 @@ body {
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+    transition: all .4s;
 }
 
 #container {
