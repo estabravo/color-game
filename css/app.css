@@ -63,3 +63,8 @@ button {
     font-weight: 650;
     color: slategray;
 }
+
+button:hover {
+    color: white;
+    background: slategray;
+}
