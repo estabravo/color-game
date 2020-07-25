@@ -10,8 +10,10 @@ body {
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
-    transition: all .4s;
+    transition: all 0.4s;
     border-radius: 15%;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
 }
 
 #container {
@@ -65,6 +67,8 @@ button {
     font-weight: 650;
     color: slategray;
     transition: all .3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
 }
 
 button:hover {
