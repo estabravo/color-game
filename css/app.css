@@ -46,3 +46,14 @@ h1 {
 .selected {
     background: blue;
 }
+
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: inherit;
+    height: 100%;
+    font-weight: 650;
+    color: slategray;
+}
