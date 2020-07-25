@@ -25,6 +25,7 @@ h1 {
     text-transform: uppercase;
     background: slategray;
     margin: 0;
+    padding: 17px 0;
 }
 
 #colorDisplay {
