@@ -76,6 +76,7 @@ const reset = num => {
         };
     };
     resetButton.textContent = "New Colors";
+    messageDisplay.textContent = ""
     h1.style.background = "slategray";
 };
 
