@@ -5,6 +5,7 @@ const h1 = document.querySelector('h1');
 const resetButton = document.getElementById('reset');
 const easyBtn = document.getElementById('easyBtn');
 const hardBtn = document.getElementById('hardBtn');
+const insaneBtn = document.getElementById('insaneBtn');
 const grid = document.getElementById('container');
 let nums = 6;
 
@@ -84,6 +85,7 @@ const reset = num => {
 easyBtn.addEventListener('click', () => {
     easyBtn.classList.add('selected');
     hardBtn.classList.remove('selected');
+    insaneBtn.classList.remove('selected');
     
     let nums = 3;
     reset(nums);
@@ -92,8 +94,18 @@ easyBtn.addEventListener('click', () => {
  hardBtn.addEventListener('click', () => {
      hardBtn.classList.add('selected');
      easyBtn.classList.remove('selected');
+     insaneBtn.classList.remove('selected');
 
      let nums = 6
+     reset(nums);
+ });
+ 
+ insaneBtn.addEventListener('click', () => {
+     insaneBtn.classList.add('selected');
+     easyBtn.classList.remove('selected');
+     hardBtn.classList.remove('selected');
+
+     let nums = 9
      reset(nums);
  });
 
@@ -101,8 +113,12 @@ easyBtn.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
     if (hardBtn.classList.contains('selected')){
         nums = 6;
-    } else {
+    } else if (easyBtn.classList.contains('selected')){
         nums = 3;
+    } else {
+        nums = 9;
     }
     reset(nums);
 });
+
+reset(nums);
