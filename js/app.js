@@ -3,9 +3,7 @@ const colorDisplay = document.getElementById('colorDisplay');
 const messageDisplay = document.getElementById('message');
 const h1 = document.querySelector('h1');
 const resetButton = document.getElementById('reset');
-const easyBtn = document.getElementById('easyBtn');
-const hardBtn = document.getElementById('hardBtn');
-const insaneBtn = document.getElementById('insaneBtn');
+let modeButtons = document.querySelectorAll(".mode");
 const grid = document.getElementById('container');
 let nums = 6;
 
@@ -81,43 +79,22 @@ const reset = num => {
     h1.style.background = "slategray";
 };
 
-
-easyBtn.addEventListener('click', () => {
-    easyBtn.classList.add('selected');
-    hardBtn.classList.remove('selected');
-    insaneBtn.classList.remove('selected');
-    
-    let nums = 3;
-    reset(nums);
- });
- 
- hardBtn.addEventListener('click', () => {
-     hardBtn.classList.add('selected');
-     easyBtn.classList.remove('selected');
-     insaneBtn.classList.remove('selected');
-
-     let nums = 6
-     reset(nums);
- });
- 
- insaneBtn.addEventListener('click', () => {
-     insaneBtn.classList.add('selected');
-     easyBtn.classList.remove('selected');
-     hardBtn.classList.remove('selected');
-
-     let nums = 9
-     reset(nums);
- });
-
+for(let i = 0; i < modeButtons.length; i++){
+    modeButtons[i].addEventListener("click", e => {
+        modeButtons[0].classList.remove("selected");
+        modeButtons[1].classList.remove("selected");
+        modeButtons[2].classList.remove("selected");
+        e.target.classList.add("selected");
+        if(modeButtons[i].textContent === "Easy"){
+            nums = 3;
+            } else if(modeButtons[i].textContent === "Hard"){
+            nums = 6;
+            } else nums = 9;
+        reset(nums);
+    });
+}
 
 resetButton.addEventListener('click', () => {
-    if (hardBtn.classList.contains('selected')){
-        nums = 6;
-    } else if (easyBtn.classList.contains('selected')){
-        nums = 3;
-    } else {
-        nums = 9;
-    }
     reset(nums);
 });
 
